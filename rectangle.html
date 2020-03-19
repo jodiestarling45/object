@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<canvas id="myCanvas" style="background-color: chocolate" >
+<script>
+    let rectangle=function (width,Horizontal) {
+      this.width=width;
+      this.Horizontal=Horizontal;
+      this.acreage=function () {
+            let result=0;
+            result=this.width*this.Horizontal;
+            return result;
+      };
+      this.perimeter=function () {
+            let result=0;
+            result=(this.width+this.Horizontal)/2;
+            return result;
+      };
+
+    };
+    function show(x,y){
+        let canvas = document.getElementById("myCanvas").getContext("2d");
+        canvas.beginPath();
+        canvas.fillRect(x,x,y,y);
+        canvas.fill();
+    }
+    let dai=parseInt(prompt("nhập chiều dài "));
+    let rong=parseInt(prompt("nhập chiều rộng"));
+    let chunhat=new rectangle(dai,rong);
+    let dientich=chunhat.acreage();
+    let chuvi=chunhat.perimeter();
+    alert(dientich+","+chuvi);
+    document.write(show(dai,rong))
+
+</script>
+</body>
+</html>
